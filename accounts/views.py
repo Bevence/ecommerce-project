@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def signin_view(request):
-    return render(request, 'account/signin.html')
+    return render(request, 'index.html')

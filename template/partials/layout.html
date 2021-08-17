@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{% static 'images/favicon.png' %}" rel="shortcut icon">
+    <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+
+    <!--====== Google Font ======-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+    <!--====== Vendor Css ======-->
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+
+    <!--====== Utility-Spacing ======-->
+    <link rel="stylesheet" href="{% static 'css/utility.css' %}">
+
+    <!--====== App ======-->
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<body class="config">
+    {% block loader %}
+    {% endblock loader %}
+
+
+    <!--====== Main App ======-->
+    <div id="app">
+
+        <!--====== Main Header ======-->
+        {% block header %}
+        {% endblock header %}
+        <!--====== End - Main Header ======-->
+
+
+        <!--====== App Content ======-->
+        <div class="app-content">
+
+            <!--====== Primary Slider ======-->
+            {% block slider %}
+            {% endblock slider %}
+            <!--====== End - Primary Slider ======-->
+
+
+            <!--====== Section 1 ======-->
+            {% block shop_by_deals %}
+            {% endblock shop_by_deals %}
+            <!--====== End - Section 1 ======-->
+
+
+            <!--====== Section 2 ======-->
+            {% block trending %}
+            {% endblock trending %}
+            <!--====== End - Section 2 ======-->
+
+
+            <!--====== Section 3 ======-->
+            {% block deal_of_day %}
+            {% endblock deal_of_day %}
+            <!--====== End - Section 3 ======-->
+
+
+            <!--====== Section 4 ======-->
+            {% block new_arrivals %}
+            {% endblock new_arrivals %}
+            <!--====== End - Section 4 ======-->
+
+
+            <!--====== Section 5 ======-->
+            {% block countdown_offer %}
+            {% endblock countdown_offer %}
+            <!--====== End - Section 5 ======-->
+
+
+            <!--====== Section 6 ======-->
+            {% block featured_product %}
+            {% endblock featured_product %}
+            <!--====== End - Section 6 ======-->
+
+
+            <!--====== Section 7 ======-->
+            {% block deals %}
+            {% endblock deals %}
+            <!--====== End - Section 7 ======-->
+
+
+            <!--====== Section 8 ======-->
+            {% block product_desc %}
+            {% endblock product_desc %}
+            <!--====== End - Section 8 ======-->
+
+
+            <!--====== Section 9 ======-->
+            {% block features %}
+            {% endblock features %}
+            <!--====== End - Section 9 ======-->
+
+
+            <!--====== Section 10 ======-->
+            {% block blog %}
+            {% endblock blog %}
+            <!--====== End - Section 10 ======-->
+
+
+            <!--====== Section 11 ======-->
+            {% block client_feedback %}
+            {% endblock client_feedback %}
+            <!--====== End - Section 11 ======-->
+
+        </div>
+        <!--====== End - App Content ======-->
+
+
+        <!--====== Main Footer ======-->
+        {% block footer %}
+        {% endblock footer %}
+
+        <!--====== Modal Section ======-->
+
+
+        <!--====== Quick Look Modal ======-->
+        {% block quick_look %}
+        {% endblock quick_look %}
+        <!--====== End - Quick Look Modal ======-->
+
+
+        <!--====== Add to Cart Modal ======-->
+        {% block cart_model %}
+        {% endblock cart_model %}
+        <!--====== End - Add to Cart Modal ======-->
+
+
+        <!--====== Newsletter Subscribe Modal ======-->
+        {% block newsletter %}
+        {% endblock newsletter %}
+        <!--====== End - Newsletter Subscribe Modal ======-->
+        <!--====== End - Modal Section ======-->
+    </div>
+    <!--====== End - Main App ======-->
+
+
+    <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+</html>

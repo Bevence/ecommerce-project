@@ -51,12 +51,20 @@
 
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:120px">
+                                    {% if request.user.is_authenticated %}
                                     <li>
 
                                         <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                             <span>Account</span></a>
                                     </li>
+                                    <li>
+
+                                        <a href="{% url 'logout' %}"><i class="fas fa-lock-open u-s-m-r-6"></i>
+
+                                            <span>Signout</span></a>
+                                    </li>
+                                    {% else %}
                                     <li>
 
                                         <a href="{% url 'signup' %}"><i class="fas fa-user-plus u-s-m-r-6"></i>
@@ -69,83 +77,19 @@
 
                                             <span>Signin</span></a>
                                     </li>
-                                    <li>
+                                    {% endif %}
 
-                                        <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
-
-                                            <span>Signout</span></a>
-                                    </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>
-                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Settings">
 
-                                <a><i class="fas fa-user-cog"></i></a>
+                            <li data-tooltip="tooltip" data-placement="left" title="+977-9860117649">
 
-                                <!--====== Dropdown ======-->
-
-                                <span class="js-menu-toggle"></span>
-                                <ul style="width:120px">
-                                    <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                        <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:120px">
-                                            <li>
-
-                                                <a class="u-c-brand">ENGLISH</a>
-                                            </li>
-                                            <li>
-
-                                                <a>ARABIC</a>
-                                            </li>
-                                            <li>
-
-                                                <a>FRANCAIS</a>
-                                            </li>
-                                            <li>
-
-                                                <a>ESPANOL</a>
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                    <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                        <a>Currency<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:225px">
-                                            <li>
-
-                                                <a class="u-c-brand">$ - US DOLLAR</a>
-                                            </li>
-                                            <li>
-
-                                                <a>£ - BRITISH POUND STERLING</a>
-                                            </li>
-                                            <li>
-
-                                                <a>€ - EURO</a>
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                </ul>
-                                <!--====== End - Dropdown ======-->
+                                <a href="javascript:;"><i class="fas fa-phone-volume"></i></a>
                             </li>
-                            <li data-tooltip="tooltip" data-placement="left" title="Contact">
+                            <li data-tooltip="tooltip" data-placement="left" title="sitikhubikesh@gmail.com">
 
-                                <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a>
-                            </li>
-                            <li data-tooltip="tooltip" data-placement="left" title="Mail">
-
-                                <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a>
+                                <a href="javascript:;"><i class="far fa-envelope"></i></a>
                             </li>
                         </ul>
                         <!--====== End - List ======-->

@@ -51,6 +51,7 @@ def signup_view(request):
                 email=email,
                 password=password
             )
+            return redirect('signin')
         else:
             message = "Invalid FOrm"
     else:

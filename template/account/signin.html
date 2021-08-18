@@ -29,11 +29,11 @@
                             <ul class="breadcrumb__list">
                                 <li class="has-separator">
 
-                                    <a href="index.html">Home</a>
+                                    <a href="{% url 'home' %}">Home</a>
                                 </li>
                                 <li class="is-marked">
 
-                                    <a href="signin.html">Signin</a>
+                                    <a>Signin</a>
                                 </li>
                             </ul>
                         </div>
@@ -61,7 +61,7 @@
                                     <div class="u-s-m-b-15">
 
                                         <a class="l-f-o__create-link btn--e-transparent-brand-b-2"
-                                            href="signup.html">CREATE AN ACCOUNT</a>
+                                            href="{% url 'signup' %}">CREATE AN ACCOUNT</a>
                                     </div>
                                     <h1 class="gl-h1">SIGNIN</h1>
                                     {% if message is not None %}

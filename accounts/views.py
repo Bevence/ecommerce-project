@@ -36,7 +36,6 @@ def signup_view(request):
         print(form.is_valid())
         if form.is_valid():
             first_name = form.cleaned_data['first_name']
-            middle_name = form.cleaned_data['middle_name']
             last_name = form.cleaned_data['last_name']
             username = form.cleaned_data['username']
             dob = form.cleaned_data['dob']
@@ -45,7 +44,6 @@ def signup_view(request):
             password = form.cleaned_data['password1']
             user = Account.objects.create_user(
                 first_name=first_name,
-                middle_name=middle_name,
                 last_name=last_name,
                 username=username,
                 dob=dob,

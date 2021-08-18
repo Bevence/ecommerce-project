@@ -5,15 +5,14 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 # Create your models here.
 
 class MyAccountManage(BaseUserManager):
-    def create_user(self, first_name, last_name, username, email, gender, dob, middle_name=None, password=None):
+    def create_user(self, first_name, last_name, username, email, gender, dob, password=None):
         if not email:
             raise ValueError("User need email to continue")
         if not username:
-            raise  ValueError("User must have a username")
+            raise ValueError("User must have a username")
         user = self.model(
             email=self.normalize_email(email),
             first_name=first_name,
-            middle_name=middle_name,
             last_name=last_name,
             username=username,
             gender=gender,
@@ -23,27 +22,27 @@ class MyAccountManage(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, first_name, last_name, username, email, gender, dob, password, middle_name=None):
+    def create_superuser(self, first_name, last_name, username, email, gender, dob, password):
         user = self.create_user(
             email=self.normalize_email(email),
             first_name=first_name,
-            middle_name=middle_name,
             last_name=last_name,
             username=username,
             gender=gender,
             dob=dob,
             password=password
         )
-        user.is_admin=True
-        user.is_active=True
-        user.is_staff=True
-        user.is_superuser=True
+        user.is_admin = True
+        user.is_active = True
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
+        return user
 
 
 class Account(AbstractBaseUser):
     GENDER = (("0", "Male"), ("1", "Female"), ("2", "Others"))
     first_name = models.CharField(max_length=30, )
-    middle_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(unique=True)
@@ -57,7 +56,7 @@ class Account(AbstractBaseUser):
     is_superuser = models.BooleanField(default=False)
 
     USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ('first_name', 'middle_name', 'lastname', 'username', 'email', 'gender', 'dob')
+    REQUIRED_FIELDS = ('first_name', 'last_name', 'email', 'gender', 'dob')
     objects = MyAccountManage()
 
     def __str__(self):

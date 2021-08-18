@@ -32,14 +32,14 @@ class SignUpForm(forms.ModelForm):
             }
         )
     )
-    middle_name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "input-text input-text--primary-style",
-                "placeholder": "Middle Name"
-            }
-        )
-    )
+    # middle_name = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "class": "input-text input-text--primary-style",
+    #             "placeholder": "Middle Name"
+    #         }
+    #     )
+    # )
     last_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
@@ -95,6 +95,6 @@ class SignUpForm(forms.ModelForm):
 
     class Meta:
         model = Account
-        fields = ('first_name', 'middle_name', 'last_name', 'username', 'dob', 'gender', 'email', 'password1',
+        fields = ('first_name', 'last_name', 'username', 'dob', 'gender', 'email', 'password1',
                   'password2')
 

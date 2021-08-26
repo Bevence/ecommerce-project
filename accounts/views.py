@@ -51,6 +51,9 @@ def signup_view(request):
                 email=email,
                 password=password
             )
+
+            user.is_active = True
+            user.save()
             return redirect('signin')
         else:
             message = "Invalid FOrm"

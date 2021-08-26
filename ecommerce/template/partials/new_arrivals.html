@@ -1,0 +1,83 @@
+{% load static %}
+
+<div class="u-s-p-b-60">
+
+    <!--====== Section Intro ======-->
+    <div class="section__intro u-s-m-b-46">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section__text-wrap">
+                        <h1 class="section__heading u-c-secondary u-s-m-b-12">NEW ARRIVALS</h1>
+
+                        <span class="section__span u-c-silver">GET UP FOR NEW ARRIVALS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Intro ======-->
+
+
+    <!--====== Section Content ======-->
+    <div class="section__content">
+        <div class="container">
+            <div class="slider-fouc">
+                <div class="owl-carousel product-slider" data-item="4">
+                    {% for item in new_arrivals %}
+                    <div class="u-s-m-b-30">
+                        <div class="product-o product-o--hover-on">
+                            <div class="product-o__wrap">
+
+                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                                    <img class="aspect__img" src="{{ item.image.url }}" alt=""></a>
+                                <div class="product-o__action-wrap">
+                                    <ul class="product-o__action-list">
+                                        
+                                        <li>
+
+                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip"
+                                                data-placement="top" title="Add to Cart"><i
+                                                    class="fas fa-plus-circle"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top"
+                                                title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <span class="product-o__category">
+
+                                <a href="shop-side-version-2.html">{{ item.category }} >> {{ item.category.category }}</a></span>
+
+                            <span class="product-o__name">
+
+                                <a href="{{ item.get_absolute_url }}">{{ item.title }}</a></span>
+                            <div class="product-o__rating gl-rating-style"><i class="far fa-star"></i><i
+                                    class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                                    class="far fa-star"></i>
+
+                                <span class="product-o__review">(0)</span>
+                            </div>
+                            {% if item.discount_price %}
+                            <span class="product-o__price">Rs. {{ item.get_discounted_price }}
+
+                                <span class="product-o__discount">Rs. {{ item.price }}</span></span>
+                            {% else %}
+                            <span class="product-o__price">{{ item.price }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Content ======-->
+</div>
